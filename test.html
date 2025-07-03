@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Unreal Jitsi Meeting</title>
+  <script src="https://meet.jit.si/external_api.js"></script>
+</head>
+<body style="margin:0; padding:0; overflow:hidden;">
+  <div id="jitsi" style="width:100vw; height:100vh;"></div>
+
+  <script>
+    const domain = "meet.jit.si";
+    const options = {
+      roomName: "UnrealLiveRoom123",
+      parentNode: document.getElementById("jitsi"),
+      userInfo: {
+        displayName: "Unreal User"
+      },
+      configOverwrite: {},
+      interfaceConfigOverwrite: {
+        SHOW_JITSI_WATERMARK: false,
+        SHOW_BRAND_WATERMARK: false,
+        TOOLBAR_BUTTONS: [
+          'microphone', 'camera', 'chat', 'raisehand', 'tileview', 'fullscreen', 'hangup'
+        ]
+      }
+    };
+
+    const api = new JitsiMeetExternalAPI(domain, options);
+  </script>
+</body>
+</html>
